@@ -13,6 +13,7 @@ RUN npm install
 #to copy application code
 copy . .
 
+#stage2
 #creating final image which is less size
 FROM node:14-slim
 workdir /usr/src/app
