@@ -1,0 +1,19 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: node
+spec:
+  destination:
+    name: ''
+    namespace: test
+    server: 'https://kubernetes.default.svc'
+  source:
+    path: helm
+    repoURL: 'https://github.com/bhaskarDM/node_hello.git'
+    targetRevision: HEAD
+  sources: []
+  project: node
+  syncPolicy:
+    automated:
+      prune: false
+      selfHeal: false
